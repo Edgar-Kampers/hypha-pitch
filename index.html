@@ -404,7 +404,7 @@
 function downloadPDF() {
   var btn = document.querySelector('.pdf-btn');
   btn.style.display = 'none';
-  window.print();
+  document.fonts.ready.then(function(){window.print()});
   setTimeout(function(){ btn.style.display = 'flex'; }, 1000);
 }
 </script>
