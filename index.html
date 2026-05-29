@@ -128,9 +128,24 @@
   .cta-strip { margin-top: 32px; text-align: center; font-size: 13px; color: var(--muted); }
   .cta-strip a { color: var(--green); text-decoration: none; font-weight: 600; }
 
+  @page {
+    size: 297mm 167mm;
+    margin: 0;
+  }
   @media print {
-    body { width: 297mm; }
-    .slide { width: 297mm; min-height: 167mm; padding: 20mm 25mm; page-break-after: always; border-bottom: none; }
+    html, body { margin: 0; padding: 0; width: 297mm; background: #0a0a0a; }
+    .slide {
+      width: 297mm;
+      height: 167mm;
+      min-height: unset;
+      padding: 14mm 18mm;
+      page-break-after: always;
+      break-after: page;
+      border-bottom: none;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+    .slide:last-of-type { page-break-after: avoid; break-after: avoid; }
   }
 
   /* ── PDF BUTTON ── */
